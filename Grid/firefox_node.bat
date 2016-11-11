@@ -1,0 +1,1 @@
+java -jar C:\Users\dmytro.pazykov\javaCourses\Grid\selenium-server-standalone-3.0.1.jar -role node -hub http://localhost:4444/grid/register -browser browserName=firefox,maxInstances=10,platform=WINDOWS -port 5555
