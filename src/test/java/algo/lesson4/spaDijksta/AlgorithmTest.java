@@ -8,19 +8,19 @@ public class AlgorithmTest {
 
     @Test
     public void test(){
-        ExtendedNode node0 = new ExtendedNode("A");
-        ExtendedNode node1 = new ExtendedNode("B");
-        ExtendedNode node2 = new ExtendedNode("C");
+        ExtendedNode nodeA = new ExtendedNode("A");
+        ExtendedNode nodeB = new ExtendedNode("B");
+        ExtendedNode nodeC = new ExtendedNode("C");
 
-        node0.addChildren(new Edge(1, node0, node1));
-        node0.addChildren(new Edge(3, node0, node2));
-        node1.addChildren(new Edge(1, node1, node2));
+        nodeA.addChildren(new Edge(1, nodeA, nodeB));
+        nodeA.addChildren(new Edge(1, nodeA, nodeC));
+        nodeB.addChildren(new Edge(1, nodeB, nodeC));
 
         DijkstaAlgorithm algorithm = new DijkstaAlgorithm();
 
-        algorithm.computePath(node0);
+        algorithm.computePath(nodeA);
 
-        System.out.println(algorithm.getShortestPath(node2));
+        System.out.println(algorithm.getShortestPath(nodeC));
     }
 
     @Test

@@ -16,7 +16,7 @@ public class BellmanFordAlgorithm {
     public void bellmanFord(ExtendedNode startNode) {
         startNode.setDistance(0);
 
-        for (int i = 0; i < nodeList.size() - 1; i++) {
+        for (int i = 0; i < nodeList.size() - 1; i++) { // v-1
             for (Edge edge : edgeList) {
                 ExtendedNode u = edge.getStartNode();
                 ExtendedNode v = edge.getTargetNode();
