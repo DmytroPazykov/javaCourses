@@ -1,7 +1,7 @@
-package algo.lesson4.dag;
+package algo.dag;
 
-import algo.lesson4.utils.ExtendedNode;
-import algo.lesson4.utils.Edge;
+import algo.utils.AdvancedNode;
+import algo.utils.Edge;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,19 +10,19 @@ import java.util.Stack;
 
 public class AcyclicShortestPath {
 
-    public void shortestPath(List<ExtendedNode> nodeList, ExtendedNode startNode, ExtendedNode targetNode) {
+    public void shortestPath(List<AdvancedNode> nodeList, AdvancedNode startNode, AdvancedNode targetNode) {
         startNode.setDistance(0);
 
         TopologicalSort topologicalSort = new TopologicalSort();
         topologicalSort.makeTopologicalOrder(nodeList);
 
-        Stack<ExtendedNode> stack = topologicalSort.getTopologicalOrder();
+        Stack<AdvancedNode> stack = topologicalSort.getTopologicalOrder();
 
 
-        for (ExtendedNode actualNode : stack) {
+        for (AdvancedNode actualNode : stack) {
             for (Edge edge : actualNode.getAdjacencies()) {
-                ExtendedNode u = edge.getStartNode();
-                ExtendedNode v = edge.getTargetNode();
+                AdvancedNode u = edge.getStartNode();
+                AdvancedNode v = edge.getTargetNode();
 
                 double newDistance = u.getDistance() + edge.getWeight();
                 if (newDistance < v.getDistance()) {
@@ -39,10 +39,10 @@ public class AcyclicShortestPath {
         }
     }
 
-    public void showShortestPathTo(ExtendedNode targetNode){
-        List<ExtendedNode> nodeList = new ArrayList<>();
+    public void showShortestPathTo(AdvancedNode targetNode){
+        List<AdvancedNode> nodeList = new ArrayList<>();
 
-        ExtendedNode actualNode = targetNode;
+        AdvancedNode actualNode = targetNode;
         nodeList.add(actualNode);
 
         while (actualNode.getPreviousNode() != null){

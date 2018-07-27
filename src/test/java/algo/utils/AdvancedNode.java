@@ -1,4 +1,4 @@
-package algo.lesson4.utils;
+package algo.utils;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,15 +10,15 @@ import java.util.List;
 @Setter
 @Getter
 @ToString(of = "name", includeFieldNames = false)
-public class ExtendedNode implements Comparable<ExtendedNode>{
+public class AdvancedNode implements Comparable<AdvancedNode>{
 
     private String name;
     private boolean visited;
     private double distance = Double.MAX_VALUE;
     private List<Edge> adjacencies;
-    private ExtendedNode previousNode;
+    private AdvancedNode previousNode;
 
-    public ExtendedNode(String name) {
+    public AdvancedNode(String name) {
         this.name = name;
         this.adjacencies = new ArrayList<>();
     }
@@ -28,7 +28,7 @@ public class ExtendedNode implements Comparable<ExtendedNode>{
     }
 
     @Override
-    public int compareTo(ExtendedNode extendedNode) {
-        return Double.compare(this.distance, extendedNode.getDistance());
+    public int compareTo(AdvancedNode advancedNode) {
+        return Double.compare(this.distance, advancedNode.getDistance());
     }
 }

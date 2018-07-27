@@ -1,7 +1,7 @@
-package algo.lesson4.spaBellmanFord;
+package algo.spaBellmanFord;
 
-import algo.lesson4.utils.ExtendedNode;
-import algo.lesson4.utils.Edge;
+import algo.utils.AdvancedNode;
+import algo.utils.Edge;
 import lombok.AllArgsConstructor;
 
 import java.util.ArrayList;
@@ -10,16 +10,16 @@ import java.util.List;
 
 @AllArgsConstructor
 public class BellmanFordAlgorithm {
-    private List<ExtendedNode> nodeList;
+    private List<AdvancedNode> nodeList;
     private List<Edge> edgeList;
 
-    public void bellmanFord(ExtendedNode startNode) {
+    public void bellmanFord(AdvancedNode startNode) {
         startNode.setDistance(0);
 
         for (int i = 0; i < nodeList.size() - 1; i++) { // v-1
             for (Edge edge : edgeList) {
-                ExtendedNode u = edge.getStartNode();
-                ExtendedNode v = edge.getTargetNode();
+                AdvancedNode u = edge.getStartNode();
+                AdvancedNode v = edge.getTargetNode();
 
                 if (u.getDistance() == Double.MAX_VALUE) continue;
 
@@ -48,15 +48,15 @@ public class BellmanFordAlgorithm {
 
     }
 
-    public void shortestPathTo(ExtendedNode targetNode) {
-        List<ExtendedNode> nodeList = new ArrayList<>();
+    public void shortestPathTo(AdvancedNode targetNode) {
+        List<AdvancedNode> nodeList = new ArrayList<>();
         nodeList.add(targetNode);
 
         if (targetNode.getDistance() == Double.MAX_VALUE) {
             System.out.println("There is no path from the source to the target");
         }
 
-        ExtendedNode actualNode = targetNode;
+        AdvancedNode actualNode = targetNode;
 
         while (actualNode.getPreviousNode() != null) {
             actualNode = actualNode.getPreviousNode();

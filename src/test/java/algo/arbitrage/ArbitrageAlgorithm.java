@@ -1,30 +1,30 @@
-package algo.lesson4.arbitrage;
+package algo.arbitrage;
 
-import algo.lesson4.utils.ExtendedNode;
-import algo.lesson4.utils.Edge;
+import algo.utils.AdvancedNode;
+import algo.utils.Edge;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ArbitrageAlgorithm {
-    private List<ExtendedNode> nodeList;
+    private List<AdvancedNode> nodeList;
     private List<Edge> edgeList;
-    private List<ExtendedNode> cycleList;
+    private List<AdvancedNode> cycleList;
 
-    public ArbitrageAlgorithm(List<ExtendedNode> nodeList, List<Edge> edgeList) {
+    public ArbitrageAlgorithm(List<AdvancedNode> nodeList, List<Edge> edgeList) {
         this.nodeList = nodeList;
         this.edgeList = edgeList;
         this.cycleList = new ArrayList<>();
     }
 
-    public void arbitrageAlgorithm(ExtendedNode startNode) {
+    public void arbitrageAlgorithm(AdvancedNode startNode) {
         startNode.setDistance(0);
 
         for (int i = 0; i < nodeList.size() - 1; i++) {
             for (Edge edge : edgeList) {
 
-                ExtendedNode u = edge.getStartNode();
-                ExtendedNode v = edge.getTargetNode();
+                AdvancedNode u = edge.getStartNode();
+                AdvancedNode v = edge.getTargetNode();
 
                 if (u.getDistance() == Double.MAX_VALUE) continue;
 
@@ -42,7 +42,7 @@ public class ArbitrageAlgorithm {
                 if (hasCycle(edge)) {
                     System.out.println("There has been a negative cycle detected...");
 
-                    ExtendedNode node = edge.getStartNode();
+                    AdvancedNode node = edge.getStartNode();
 
                     while (!node.equals(edge.getTargetNode())) {
                         this.cycleList.add(node);
@@ -66,7 +66,7 @@ public class ArbitrageAlgorithm {
         if (this.cycleList != null) {
             System.out.println("Arbitrage opportunity detected");
 
-            for (ExtendedNode node : this.cycleList) {
+            for (AdvancedNode node : this.cycleList) {
                 System.out.println(node);
             }
         } else {

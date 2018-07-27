@@ -1,4 +1,4 @@
-package algo.lesson4.utils;
+package algo.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,6 +9,6 @@ import lombok.Setter;
 @Setter
 public class Edge {
     private double weight;
-    private ExtendedNode startNode;
-    private ExtendedNode targetNode;
+    private AdvancedNode startNode;
+    private AdvancedNode targetNode;
 }

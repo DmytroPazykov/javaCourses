@@ -1,7 +1,7 @@
-package algo.lesson4.spaBellmanFord;
+package algo.spaBellmanFord;
 
-import algo.lesson4.utils.ExtendedNode;
-import algo.lesson4.utils.Edge;
+import algo.utils.AdvancedNode;
+import algo.utils.Edge;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -12,11 +12,11 @@ public class BellmanFordTest {
     @Test
     public void test() {
 
-        List<ExtendedNode> nodeList = new ArrayList<>();
+        List<AdvancedNode> nodeList = new ArrayList<>();
 
-        nodeList.add(new ExtendedNode("A"));
-        nodeList.add(new ExtendedNode("B"));
-        nodeList.add(new ExtendedNode("C"));
+        nodeList.add(new AdvancedNode("A"));
+        nodeList.add(new AdvancedNode("B"));
+        nodeList.add(new AdvancedNode("C"));
 
         List<Edge> edgeList = new ArrayList<>();
 
@@ -34,11 +34,11 @@ public class BellmanFordTest {
     @Test
     public void testNegative() {
 
-        List<ExtendedNode> nodeList = new ArrayList<>();
+        List<AdvancedNode> nodeList = new ArrayList<>();
 
-        nodeList.add(new ExtendedNode("A"));
-        nodeList.add(new ExtendedNode("B"));
-        nodeList.add(new ExtendedNode("C"));
+        nodeList.add(new AdvancedNode("A"));
+        nodeList.add(new AdvancedNode("B"));
+        nodeList.add(new AdvancedNode("C"));
 
         List<Edge> edgeList = new ArrayList<>();
 
@@ -54,11 +54,11 @@ public class BellmanFordTest {
     @Test
     public void test1() {
 
-        List<ExtendedNode> nodeList = new ArrayList<>();
+        List<AdvancedNode> nodeList = new ArrayList<>();
 
-        nodeList.add(new ExtendedNode("A"));
-        nodeList.add(new ExtendedNode("B"));
-        nodeList.add(new ExtendedNode("C"));
+        nodeList.add(new AdvancedNode("A"));
+        nodeList.add(new AdvancedNode("B"));
+        nodeList.add(new AdvancedNode("C"));
 
         List<Edge> edgeList = new ArrayList<>();
 
@@ -73,14 +73,14 @@ public class BellmanFordTest {
 
     @Test
     public void testNegativeExtended(){
-        List<ExtendedNode> nodeList = new ArrayList<>();
+        List<AdvancedNode> nodeList = new ArrayList<>();
 
-        nodeList.add(new ExtendedNode("A"));
-        nodeList.add(new ExtendedNode("B"));
-        nodeList.add(new ExtendedNode("C"));
-        nodeList.add(new ExtendedNode("D"));
-        nodeList.add(new ExtendedNode("E"));
-        nodeList.add(new ExtendedNode("F"));
+        nodeList.add(new AdvancedNode("A"));
+        nodeList.add(new AdvancedNode("B"));
+        nodeList.add(new AdvancedNode("C"));
+        nodeList.add(new AdvancedNode("D"));
+        nodeList.add(new AdvancedNode("E"));
+        nodeList.add(new AdvancedNode("F"));
 
         List<Edge> edgeList = new ArrayList<>();
 

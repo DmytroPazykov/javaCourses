@@ -5,23 +5,25 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import algo.utils.ExtendedNode;
+
 public class CycleTest {
     @Test
     public void test(){
-        List<NewNode> testData = getTestData();
+        List<ExtendedNode> testData = getTestData();
 
         CycleDFS cycleDFS = new CycleDFS();
 
         cycleDFS.detectCycle(testData);
     }
 
-    private List<NewNode> getTestData() {
-        NewNode node1 = new NewNode("node1");
-        NewNode node2 = new NewNode("node2");
-        NewNode node3 = new NewNode("node3");
-        NewNode node4 = new NewNode("node4");
-        NewNode node5 = new NewNode("node5");
-        NewNode node6 = new NewNode("node6");
+    private List<ExtendedNode> getTestData() {
+        ExtendedNode node1 = new ExtendedNode("node1");
+        ExtendedNode node2 = new ExtendedNode("node2");
+        ExtendedNode node3 = new ExtendedNode("node3");
+        ExtendedNode node4 = new ExtendedNode("node4");
+        ExtendedNode node5 = new ExtendedNode("node5");
+        ExtendedNode node6 = new ExtendedNode("node6");
 
         node1.setChildren(node2);
         node1.setChildren(node3);
@@ -31,7 +33,7 @@ public class CycleTest {
         node5.setChildren(node6);
         node6.setChildren(node4);
 
-        List<NewNode> nodes = new ArrayList<>();
+        List<ExtendedNode> nodes = new ArrayList<>();
 
         nodes.add(node1);
         nodes.add(node2);

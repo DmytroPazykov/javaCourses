@@ -1,4 +1,4 @@
-package algo.cycle;
+package algo.utils;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,20 +8,20 @@ import java.util.List;
 
 @Getter
 @Setter
-public class NewNode {
+public class ExtendedNode {
 
     private String name;
     private boolean isVisited = false;
     private boolean isBeingVisited = false;
-    private List<NewNode> children;
+    private List<ExtendedNode> children;
 
 
-    public NewNode(String name) {
+    public ExtendedNode(String name) {
         this.name = name;
         this.children = new ArrayList<>();
     }
 
-    public void setChildren(NewNode node) {
+    public void setChildren(ExtendedNode node) {
         this.children.add(node);
     }
 

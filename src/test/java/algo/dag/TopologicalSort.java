@@ -1,7 +1,7 @@
-package algo.lesson4.dag;
+package algo.dag;
 
-import algo.lesson4.utils.ExtendedNode;
-import algo.lesson4.utils.Edge;
+import algo.utils.AdvancedNode;
+import algo.utils.Edge;
 
 import java.util.Collections;
 import java.util.List;
@@ -9,22 +9,22 @@ import java.util.Stack;
 
 public class TopologicalSort {
 
-    private Stack<ExtendedNode> stack;
+    private Stack<AdvancedNode> stack;
 
     public TopologicalSort() {
         this.stack = new Stack<>();
     }
 
-    public void makeTopologicalOrder(List<ExtendedNode> nodeList) {
+    public void makeTopologicalOrder(List<AdvancedNode> nodeList) {
 
-        for (ExtendedNode node : nodeList) {
+        for (AdvancedNode node : nodeList) {
             if (!node.isVisited()) {
                 dfs(node);
             }
         }
     }
 
-    private void dfs(ExtendedNode node) {
+    private void dfs(AdvancedNode node) {
         for (Edge edge : node.getAdjacencies()) {
             if (!edge.getTargetNode().isVisited()) {
                 edge.getTargetNode().setVisited(true);
@@ -35,7 +35,7 @@ public class TopologicalSort {
         this.stack.push(node);
     }
 
-    public Stack<ExtendedNode> getTopologicalOrder() {
+    public Stack<AdvancedNode> getTopologicalOrder() {
         Collections.reverse(this.stack);
         return this.stack;
     }

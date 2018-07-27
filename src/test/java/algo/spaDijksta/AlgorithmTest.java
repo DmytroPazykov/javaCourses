@@ -1,16 +1,16 @@
-package algo.lesson4.spaDijksta;
+package algo.spaDijksta;
 
-import algo.lesson4.utils.ExtendedNode;
-import algo.lesson4.utils.Edge;
+import algo.utils.AdvancedNode;
+import algo.utils.Edge;
 import org.testng.annotations.Test;
 
 public class AlgorithmTest {
 
     @Test
     public void test(){
-        ExtendedNode nodeA = new ExtendedNode("A");
-        ExtendedNode nodeB = new ExtendedNode("B");
-        ExtendedNode nodeC = new ExtendedNode("C");
+        AdvancedNode nodeA = new AdvancedNode("A");
+        AdvancedNode nodeB = new AdvancedNode("B");
+        AdvancedNode nodeC = new AdvancedNode("C");
 
         nodeA.addChildren(new Edge(1, nodeA, nodeB));
         nodeA.addChildren(new Edge(1, nodeA, nodeC));
@@ -25,14 +25,14 @@ public class AlgorithmTest {
 
     @Test
     public void test1(){
-        ExtendedNode node0 = new ExtendedNode("A");
-        ExtendedNode node1 = new ExtendedNode("B");
-        ExtendedNode node2 = new ExtendedNode("C");
-        ExtendedNode node3 = new ExtendedNode("D");
-        ExtendedNode node4 = new ExtendedNode("E");
-        ExtendedNode node5 = new ExtendedNode("H");
-        ExtendedNode node6 = new ExtendedNode("F");
-        ExtendedNode node7 = new ExtendedNode("G");
+        AdvancedNode node0 = new AdvancedNode("A");
+        AdvancedNode node1 = new AdvancedNode("B");
+        AdvancedNode node2 = new AdvancedNode("C");
+        AdvancedNode node3 = new AdvancedNode("D");
+        AdvancedNode node4 = new AdvancedNode("E");
+        AdvancedNode node5 = new AdvancedNode("H");
+        AdvancedNode node6 = new AdvancedNode("F");
+        AdvancedNode node7 = new AdvancedNode("G");
 
         node0.addChildren(new Edge(5, node0, node1));
         node0.addChildren(new Edge(8, node0, node5));

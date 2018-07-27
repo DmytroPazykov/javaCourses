@@ -1,7 +1,6 @@
-package algo.lesson4.spaDijksta;
+package algo.spaDijksta;
 
-import algo.lesson4.utils.ExtendedNode;
-import algo.lesson4.utils.Edge;
+import algo.utils.AdvancedNode;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,20 +9,20 @@ import java.util.PriorityQueue;
 
 public class DijkstaAlgorithm {
 
-    public void computePath(ExtendedNode extendedNode) {
+    public void computePath(AdvancedNode advancedNode) {
 
-        extendedNode.setDistance(0);
+        advancedNode.setDistance(0);
 
-        PriorityQueue<ExtendedNode> priorityQueue = new PriorityQueue<>();
-        priorityQueue.add(extendedNode);
+        PriorityQueue<AdvancedNode> priorityQueue = new PriorityQueue<>();
+        priorityQueue.add(advancedNode);
 
         while (!priorityQueue.isEmpty()) {
-            ExtendedNode actualNode = priorityQueue.poll();
+            AdvancedNode actualNode = priorityQueue.poll();
 
             actualNode
                     .getAdjacencies()
                     .forEach(edge -> {
-                        ExtendedNode node = edge.getTargetNode();
+                        AdvancedNode node = edge.getTargetNode();
 
                         double newDistance = actualNode.getDistance() + edge.getWeight();
 
@@ -37,10 +36,10 @@ public class DijkstaAlgorithm {
         }
     }
 
-    public List<ExtendedNode> getShortestPath(ExtendedNode targetNode) {
-        List<ExtendedNode> shortestPathToTarget = new ArrayList<>();
+    public List<AdvancedNode> getShortestPath(AdvancedNode targetNode) {
+        List<AdvancedNode> shortestPathToTarget = new ArrayList<>();
 
-        for (ExtendedNode node = targetNode; node != null; node = node.getPreviousNode()) {
+        for (AdvancedNode node = targetNode; node != null; node = node.getPreviousNode()) {
             shortestPathToTarget.add(node);
         }
 

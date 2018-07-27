@@ -1,7 +1,7 @@
-package algo.lesson4.arbitrage;
+package algo.arbitrage;
 
-import algo.lesson4.utils.ExtendedNode;
-import algo.lesson4.utils.Edge;
+import algo.utils.AdvancedNode;
+import algo.utils.Edge;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -11,13 +11,13 @@ public class ArbitrageTest {
 
     @Test
     public void test() {
-        List<ExtendedNode> nodeList = new ArrayList<>();
+        List<AdvancedNode> nodeList = new ArrayList<>();
 
-        nodeList.add(new ExtendedNode("USA"));
-        nodeList.add(new ExtendedNode("EUR"));
-        nodeList.add(new ExtendedNode("GBR"));
-        nodeList.add(new ExtendedNode("CHF"));
-        nodeList.add(new ExtendedNode("CAD"));
+        nodeList.add(new AdvancedNode("USA"));
+        nodeList.add(new AdvancedNode("EUR"));
+        nodeList.add(new AdvancedNode("GBR"));
+        nodeList.add(new AdvancedNode("CHF"));
+        nodeList.add(new AdvancedNode("CAD"));
 
         List<Edge> edgeList = new ArrayList<>();
 

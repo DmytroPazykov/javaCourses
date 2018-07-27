@@ -1,7 +1,7 @@
-package algo.lesson4.dag;
+package algo.dag;
 
-import algo.lesson4.utils.ExtendedNode;
-import algo.lesson4.utils.Edge;
+import algo.utils.AdvancedNode;
+import algo.utils.Edge;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -12,11 +12,11 @@ public class DAGTest {
     @Test
     public void test(){
 
-        ExtendedNode node0 = new ExtendedNode("A");
-        ExtendedNode node1 = new ExtendedNode("B");
-        ExtendedNode node2 = new ExtendedNode("C");
+        AdvancedNode node0 = new AdvancedNode("A");
+        AdvancedNode node1 = new AdvancedNode("B");
+        AdvancedNode node2 = new AdvancedNode("C");
 
-        List<ExtendedNode> nodeList = new ArrayList<>();
+        List<AdvancedNode> nodeList = new ArrayList<>();
         nodeList.add(node0);
         nodeList.add(node1);
         nodeList.add(node2);

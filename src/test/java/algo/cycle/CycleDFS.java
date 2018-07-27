@@ -2,23 +2,25 @@ package algo.cycle;
 
 import java.util.List;
 
+import algo.utils.ExtendedNode;
+
 public class CycleDFS {
 
-    public void detectCycle(List<NewNode> nodeList) {
+    public void detectCycle(List<ExtendedNode> nodeList) {
 
-        nodeList.forEach(newNode -> {
-            if (!newNode.isVisited()) {
-                dfs(newNode);
+        nodeList.forEach(extendedNode -> {
+            if (!extendedNode.isVisited()) {
+                dfs(extendedNode);
             }
         });
     }
 
-    private void dfs(NewNode newNode) {
-        System.out.println("DFS on Nodes " + newNode);
+    private void dfs(ExtendedNode extendedNode) {
+        System.out.println("DFS on Nodes " + extendedNode);
 
-        newNode.setBeingVisited(true);
+        extendedNode.setBeingVisited(true);
 
-        newNode
+        extendedNode
                 .getChildren()
                 .forEach(node -> {
                     System.out.println("Visiting the children of the Node " + node);
@@ -33,7 +35,7 @@ public class CycleDFS {
                     }
                 });
 
-        newNode.setBeingVisited(false);
-        newNode.setVisited(true);
+        extendedNode.setBeingVisited(false);
+        extendedNode.setVisited(true);
     }
 }
